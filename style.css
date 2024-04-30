@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(137, 227, 161);
+
+}
+
+.card-area {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    background-color: rgb(137, 227, 161);
+}
+
+.card-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.card {
+    background-color: rgb(80, 80, 125);
+    color: white;
+    padding: 0.5rem;
+    width: 200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 5px 10px 8px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease-in-out;
+    border: 4px solid white;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+.card:after {
+    content: '';
+    background-image: url(imgs/stonecard.png);
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 10px 8px rgba(0,0,0,0.5);
+
+}
+
+.card:hover {
+    animation-name: rotate-3d;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate-3d {
+    25%   {transform: rotate3d(1, 0, 0, 15deg) rotate3d(0, 1, 0, -10deg) rotate3d(0, 0, 1, -1deg);}
+    50%   {transform: rotate3d(1, 0, 0, 15deg) rotate3d(0, 1, 0, 10deg) rotate3d(0, 0, 1, 0deg);}
+    75%   {transform: rotate3d(1, 0, 0, 5deg) rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 1deg);}
+    100%  {transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 0deg) rotate3d(0, 0, 1, 0deg);}
+}
+
+.card-header, .card-footer {
+    text-align: center;
+    background-color: rgb(130, 130, 175);
+    width: 100%;
+    padding: 0.5rem;
+
+}
+
+.card-header {
+    border-radius: 5px 5px 0 0;
+}
+
+.card-footer {
+    border-radius: 0 0 5px 5px;
+}
+
+.flip-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(80,80,80);
+    padding: 0.5rem;
+}
+
+#flip-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 150px;
+    background-color: rgb(240, 75, 75);
+    cursor: pointer;
+    border: solid 3px black;
+}
+
+#flip-button:hover {
+    background-color: rgb(244, 121, 121);
+}
